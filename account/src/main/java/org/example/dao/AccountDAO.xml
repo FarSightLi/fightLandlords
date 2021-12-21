@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.AccountDAO">
+    <select id="findAll" resultType="org.example.entity.UserAccount">
+        select * from user_account;
+    </select>
+
+    <select id="allNum" resultType="int">
+        select count(*) from user_account;
+    </select>
+
+    <select id="getId" resultType="String">
+        select id from user_account where email=#{email}
+    </select>
+
+    <select id="login" resultType="int">
+        select count(*) from user_account where email=#{email} and password=#{password};
+    </select>
+
+    <insert id="signUp">
+        insert into user_account (id,password,email,balance) values(#{id},#{password},#{email},0);
+    </insert>
+</mapper>
