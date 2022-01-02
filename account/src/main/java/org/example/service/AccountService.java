@@ -4,7 +4,7 @@ import org.example.entity.UserAccount;
 
 public interface AccountService {
     void findAll();
-    void signUp();
+    boolean signUp(String email,String password,String password1);
     int allNum();
-    void login();
+    boolean login(String email,String password);
 }

@@ -15,6 +15,10 @@
         select id from user_account where email=#{email}
     </select>
 
+    <select id="findByEmail" resultType="int">
+        select count(*) from user_account where email=#{email};
+    </select>
+
     <select id="login" resultType="int">
         select count(*) from user_account where email=#{email} and password=#{password};
     </select>
